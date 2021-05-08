@@ -11,6 +11,11 @@ import {
   Route
 } from "react-router-dom";
 
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {faSpinner,faEllipsisV,faUserPlus,faSignOutAlt,faTrash,faCaretDown,faUpload,faTimes,faBell} from '@fortawesome/free-solid-svg-icons'
+import {faSmile,faImage} from '@fortawesome/free-regular-svg-icons'
+library.add(faSpinner,faEllipsisV,faUserPlus,faSignOutAlt,faTrash,faCaretDown,faUpload,faTimes,faBell,faSmile,faImage)
+
 function App() {
   return (
     <Router>

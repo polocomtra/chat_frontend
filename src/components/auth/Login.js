@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import loginImage from '../../assets/images/login.svg'
-import authService from '../../services/authService'
 import './Auth.scss'
 
 import {useDispatch} from 'react-redux'
@@ -15,7 +14,6 @@ const Login = ({history}) => {
     const formSubmit = (e) => {
         e.preventDefault();
         console.log({ email, password });
-        //authService.login({ email, password }).then(res => console.log(res))
         dispatch(login({email,password})).then(()=>history.push('/'))
     }
     return (
