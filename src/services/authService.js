@@ -23,12 +23,26 @@ const authService = {
                 throw error
             })
     },
-    logout: (data) => {
+    logout: () => {
         API.defaults.headers['Authorization'] = ``
         localStorage.removeItem('user')
         localStorage.removeItem('token')
 
-    }
+    },
+    updateProfile: (data) => {
+        const headers={
+            headers:{'Content-Type':'application/x-www-wrlencoded'}
+        }
+        return API.post('/users/update', data,headers)
+            .then(data => {
+                localStorage.setItem('user',JSON.stringify(data.data))
+                return data
+            })
+            .catch(error => {
+                console.log('Auth service error', error)
+                throw error
+            })
+    },
 }
 
 const setHeadersAndStorage=({user,token})=>{
