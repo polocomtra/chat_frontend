@@ -1,14 +1,11 @@
 import AuthService from '../../services/authService'
 import { LOGIN, REGISTER, LOGOUT,UPDATE } from '../types/index'
 
-
-
 export const login=(params)=>dispatch=>{
     return AuthService.login(params)
                         .then(data=>{
                             console.log(data.data)
                             dispatch({type: LOGIN,payload: data.data})
-                    
                         })
                         .catch(error=>{
                             console.log(error)
